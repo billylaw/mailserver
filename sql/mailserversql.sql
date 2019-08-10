@@ -1,0 +1,93 @@
+USE test_mail
+CREATE TABLE `cuser` (
+	`UserID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`RoleID` INT(11) NOT NULL,
+	`CompanyID` INT(11) NULL DEFAULT NULL,
+	`CompanyName` VARCHAR(100) NULL DEFAULT NULL,
+	`UserName` VARCHAR(40) NOT NULL,
+	`Password` VARCHAR(100) NOT NULL,
+	`ChineseName` VARCHAR(100) NULL DEFAULT NULL,
+	`EnglishName` VARCHAR(100) NULL DEFAULT NULL,
+	`Tel` VARCHAR(40) NULL DEFAULT NULL,
+	`EMall` VARCHAR(40) NULL DEFAULT NULL,
+	`CreateTime` BIGINT(20) NULL DEFAULT NULL,
+	`UpdateTime` BIGINT(20) NULL DEFAULT NULL,
+	`Status` TINYINT(4) NOT NULL,
+	PRIMARY KEY (`UserID`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=MyISAM
+AUTO_INCREMENT=3
+;
+
+
+
+create table if not exists `cmail`(
+`ID` int unsigned AUTO_INCREMENT,
+`UserID` int  NOT NULL,
+`CompanyID` int NULL,
+`Email` VARCHAR(40) NOT NULL,
+`Password` VARCHAR(100) NOT NULL,
+`Server` VARCHAR(100) NULL,
+`CreateTime` bigint NULL,
+`UpdateTime` bigint NULL,
+`Status` tinyint NOT NULL,
+PRIMARY KEY(`ID`)
+)ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+create table if not exists `company`(
+`CompanyID` int unsigned AUTO_INCREMENT,
+`CompanyName` VARCHAR(100) NOT NULL,
+`Address` VARCHAR(100) NOT NULL,
+`Tel` VARCHAR(40) NOT NULL,
+`EMail` VARCHAR(100) NOT NULL,
+`WebAddress` VARCHAR(100) NULL,
+`CreateTime` bigint NULL,
+`UpdateTime` bigint NULL,
+`Status` tinyint  NOT NULL,
+PRIMARY KEY(`CompanyID`)
+)ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `mailtask` (
+	`MailID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`GroupID` INT(11) NOT NULL,
+	`UserID` INT(11) NOT NULL,
+	`Keywords` VARCHAR(1000) NULL DEFAULT NULL,
+	`SearchArea` VARCHAR(100) NULL DEFAULT NULL,
+	`SearchDate` VARCHAR(100) NULL DEFAULT NULL,
+	`Timer` VARCHAR(100) NULL DEFAULT NULL,
+	`Type` TINYINT(4) NOT NULL,
+	`SendMails` VARCHAR(200) NULL DEFAULT NULL,
+	`SendNums` INT(11) NULL DEFAULT NULL,
+	`ArriveNums` INT(11) NULL DEFAULT NULL,
+	`DenyNums` INT(11) NULL DEFAULT NULL,
+	`CreateTime` BIGINT(20) NULL DEFAULT NULL,
+	`UpdateTime` BIGINT(20) NULL DEFAULT NULL,
+	`Status` TINYINT(4) NOT NULL,
+	PRIMARY KEY (`MailID`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=MyISAM
+AUTO_INCREMENT=3
+;
+
+create table if not exists `crawlertask`(`CrawlerID` int unsigned AUTO_INCREMENT,
+`GroupID` int NOT NULL,
+`UserID` int NOT NULL,
+`Keywords` VARCHAR(1000) NULL,
+`SearchArea` VARCHAR(100) NULL,
+`SearchDate` VARCHAR(100) NULL,
+`Timer` VARCHAR(100) NULL,
+`Type`	TINYINT  NOT NULL,
+`DoneTime` bigint NULL,
+`CreateTime` bigint NULL,
+`UpdateTime` bigint NULL,
+`Status` tinyint NOT NULL,
+PRIMARY KEY(`CrawlerID`)
+)ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+
+
+
+
+

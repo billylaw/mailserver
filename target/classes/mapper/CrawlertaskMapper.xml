@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wxluo.mybatis.dao.CrawlertaskMapper">
+  <resultMap id="BaseResultMap" type="com.wxluo.mybatis.entity.Crawlertask">
+    <id column="CrawlerID" jdbcType="INTEGER" property="crawlerID" />
+    <result column="GroupID" jdbcType="INTEGER" property="groupID" />
+    <result column="UserID" jdbcType="INTEGER" property="userID" />
+    <result column="Keywords" jdbcType="VARCHAR" property="keywords" />
+    <result column="SearchArea" jdbcType="VARCHAR" property="searchArea" />
+    <result column="SearchDate" jdbcType="VARCHAR" property="searchDate" />
+    <result column="Timer" jdbcType="VARCHAR" property="timer" />
+    <result column="Type" jdbcType="TINYINT" property="type" />
+    <result column="DoneTime" jdbcType="BIGINT" property="doneTime" />
+    <result column="CreateTime" jdbcType="BIGINT" property="createTime" />
+    <result column="UpdateTime" jdbcType="BIGINT" property="updateTime" />
+    <result column="Status" jdbcType="TINYINT" property="status" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from crawlertask
+    where CrawlerID = #{crawlerID,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wxluo.mybatis.entity.Crawlertask">
+    insert into crawlertask (CrawlerID, GroupID, UserID, 
+      Keywords, SearchArea, SearchDate, 
+      Timer, `Type`, DoneTime, 
+      CreateTime, UpdateTime, `Status`
+      )
+    values (#{crawlerID,jdbcType=INTEGER}, #{groupID,jdbcType=INTEGER}, #{userID,jdbcType=INTEGER}, 
+      #{keywords,jdbcType=VARCHAR}, #{searchArea,jdbcType=VARCHAR}, #{searchDate,jdbcType=VARCHAR}, 
+      #{timer,jdbcType=VARCHAR}, #{type,jdbcType=TINYINT}, #{doneTime,jdbcType=BIGINT}, 
+      #{createTime,jdbcType=BIGINT}, #{updateTime,jdbcType=BIGINT}, #{status,jdbcType=TINYINT}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.wxluo.mybatis.entity.Crawlertask">
+    update crawlertask
+    set GroupID = #{groupID,jdbcType=INTEGER},
+      UserID = #{userID,jdbcType=INTEGER},
+      Keywords = #{keywords,jdbcType=VARCHAR},
+      SearchArea = #{searchArea,jdbcType=VARCHAR},
+      SearchDate = #{searchDate,jdbcType=VARCHAR},
+      Timer = #{timer,jdbcType=VARCHAR},
+      `Type` = #{type,jdbcType=TINYINT},
+      DoneTime = #{doneTime,jdbcType=BIGINT},
+      CreateTime = #{createTime,jdbcType=BIGINT},
+      UpdateTime = #{updateTime,jdbcType=BIGINT},
+      `Status` = #{status,jdbcType=TINYINT}
+    where CrawlerID = #{crawlerID,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select CrawlerID, GroupID, UserID, Keywords, SearchArea, SearchDate, Timer, `Type`, 
+    DoneTime, CreateTime, UpdateTime, `Status`
+    from crawlertask
+    where CrawlerID = #{crawlerID,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select CrawlerID, GroupID, UserID, Keywords, SearchArea, SearchDate, Timer, `Type`, 
+    DoneTime, CreateTime, UpdateTime, `Status`
+    from crawlertask
+  </select>
+  <resultMap id="BaseResultMap" type="com.wxluo.mybatis.entity.Crawlertask">
+    <id column="CrawlerID" jdbcType="INTEGER" property="crawlerID" />
+    <result column="GroupID" jdbcType="INTEGER" property="groupID" />
+    <result column="UserID" jdbcType="INTEGER" property="userID" />
+    <result column="Keywords" jdbcType="VARCHAR" property="keywords" />
+    <result column="SearchArea" jdbcType="VARCHAR" property="searchArea" />
+    <result column="SearchDate" jdbcType="VARCHAR" property="searchDate" />
+    <result column="Timer" jdbcType="VARCHAR" property="timer" />
+    <result column="Type" jdbcType="TINYINT" property="type" />
+    <result column="DoneTime" jdbcType="BIGINT" property="doneTime" />
+    <result column="CreateTime" jdbcType="BIGINT" property="createTime" />
+    <result column="UpdateTime" jdbcType="BIGINT" property="updateTime" />
+    <result column="Status" jdbcType="TINYINT" property="status" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from crawlertask
+    where CrawlerID = #{crawlerID,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wxluo.mybatis.entity.Crawlertask">
+    insert into crawlertask (CrawlerID, GroupID, UserID, 
+      Keywords, SearchArea, SearchDate, 
+      Timer, `Type`, DoneTime, 
+      CreateTime, UpdateTime, `Status`
+      )
+    values (#{crawlerID,jdbcType=INTEGER}, #{groupID,jdbcType=INTEGER}, #{userID,jdbcType=INTEGER}, 
+      #{keywords,jdbcType=VARCHAR}, #{searchArea,jdbcType=VARCHAR}, #{searchDate,jdbcType=VARCHAR}, 
+      #{timer,jdbcType=VARCHAR}, #{type,jdbcType=TINYINT}, #{doneTime,jdbcType=BIGINT}, 
+      #{createTime,jdbcType=BIGINT}, #{updateTime,jdbcType=BIGINT}, #{status,jdbcType=TINYINT}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.wxluo.mybatis.entity.Crawlertask">
+    update crawlertask
+    set GroupID = #{groupID,jdbcType=INTEGER},
+      UserID = #{userID,jdbcType=INTEGER},
+      Keywords = #{keywords,jdbcType=VARCHAR},
+      SearchArea = #{searchArea,jdbcType=VARCHAR},
+      SearchDate = #{searchDate,jdbcType=VARCHAR},
+      Timer = #{timer,jdbcType=VARCHAR},
+      `Type` = #{type,jdbcType=TINYINT},
+      DoneTime = #{doneTime,jdbcType=BIGINT},
+      CreateTime = #{createTime,jdbcType=BIGINT},
+      UpdateTime = #{updateTime,jdbcType=BIGINT},
+      `Status` = #{status,jdbcType=TINYINT}
+    where CrawlerID = #{crawlerID,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select CrawlerID, GroupID, UserID, Keywords, SearchArea, SearchDate, Timer, `Type`, 
+    DoneTime, CreateTime, UpdateTime, `Status`
+    from crawlertask
+    where CrawlerID = #{crawlerID,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select CrawlerID, GroupID, UserID, Keywords, SearchArea, SearchDate, Timer, `Type`, 
+    DoneTime, CreateTime, UpdateTime, `Status`
+    from crawlertask
+  </select>
+</mapper>

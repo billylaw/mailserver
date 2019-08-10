@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wxluo.mybatis.dao.CompanyMapper">
+  <resultMap id="BaseResultMap" type="com.wxluo.mybatis.entity.Company">
+    <id column="CompanyID" jdbcType="INTEGER" property="companyID" />
+    <result column="CompanyName" jdbcType="VARCHAR" property="companyName" />
+    <result column="Address" jdbcType="VARCHAR" property="address" />
+    <result column="Tel" jdbcType="VARCHAR" property="tel" />
+    <result column="EMail" jdbcType="VARCHAR" property="EMail" />
+    <result column="WebAddress" jdbcType="VARCHAR" property="webAddress" />
+    <result column="CreateTime" jdbcType="BIGINT" property="createTime" />
+    <result column="UpdateTime" jdbcType="BIGINT" property="updateTime" />
+    <result column="Status" jdbcType="TINYINT" property="status" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from company
+    where CompanyID = #{companyID,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wxluo.mybatis.entity.Company">
+    insert into company (CompanyID, CompanyName, Address, 
+      Tel, EMail, WebAddress, 
+      CreateTime, UpdateTime, `Status`
+      )
+    values (#{companyID,jdbcType=INTEGER}, #{companyName,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{tel,jdbcType=VARCHAR}, #{EMail,jdbcType=VARCHAR}, #{webAddress,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=BIGINT}, #{updateTime,jdbcType=BIGINT}, #{status,jdbcType=TINYINT}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.wxluo.mybatis.entity.Company">
+    update company
+    set CompanyName = #{companyName,jdbcType=VARCHAR},
+      Address = #{address,jdbcType=VARCHAR},
+      Tel = #{tel,jdbcType=VARCHAR},
+      EMail = #{EMail,jdbcType=VARCHAR},
+      WebAddress = #{webAddress,jdbcType=VARCHAR},
+      CreateTime = #{createTime,jdbcType=BIGINT},
+      UpdateTime = #{updateTime,jdbcType=BIGINT},
+      `Status` = #{status,jdbcType=TINYINT}
+    where CompanyID = #{companyID,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select CompanyID, CompanyName, Address, Tel, EMail, WebAddress, CreateTime, UpdateTime, 
+    `Status`
+    from company
+    where CompanyID = #{companyID,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select CompanyID, CompanyName, Address, Tel, EMail, WebAddress, CreateTime, UpdateTime, 
+    `Status`
+    from company
+  </select>
+  <resultMap id="BaseResultMap" type="com.wxluo.mybatis.entity.Company">
+    <id column="CompanyID" jdbcType="INTEGER" property="companyID" />
+    <result column="CompanyName" jdbcType="VARCHAR" property="companyName" />
+    <result column="Address" jdbcType="VARCHAR" property="address" />
+    <result column="Tel" jdbcType="VARCHAR" property="tel" />
+    <result column="EMail" jdbcType="VARCHAR" property="EMail" />
+    <result column="WebAddress" jdbcType="VARCHAR" property="webAddress" />
+    <result column="CreateTime" jdbcType="BIGINT" property="createTime" />
+    <result column="UpdateTime" jdbcType="BIGINT" property="updateTime" />
+    <result column="Status" jdbcType="TINYINT" property="status" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from company
+    where CompanyID = #{companyID,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wxluo.mybatis.entity.Company">
+    insert into company (CompanyID, CompanyName, Address, 
+      Tel, EMail, WebAddress, 
+      CreateTime, UpdateTime, `Status`
+      )
+    values (#{companyID,jdbcType=INTEGER}, #{companyName,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{tel,jdbcType=VARCHAR}, #{EMail,jdbcType=VARCHAR}, #{webAddress,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=BIGINT}, #{updateTime,jdbcType=BIGINT}, #{status,jdbcType=TINYINT}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.wxluo.mybatis.entity.Company">
+    update company
+    set CompanyName = #{companyName,jdbcType=VARCHAR},
+      Address = #{address,jdbcType=VARCHAR},
+      Tel = #{tel,jdbcType=VARCHAR},
+      EMail = #{EMail,jdbcType=VARCHAR},
+      WebAddress = #{webAddress,jdbcType=VARCHAR},
+      CreateTime = #{createTime,jdbcType=BIGINT},
+      UpdateTime = #{updateTime,jdbcType=BIGINT},
+      `Status` = #{status,jdbcType=TINYINT}
+    where CompanyID = #{companyID,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select CompanyID, CompanyName, Address, Tel, EMail, WebAddress, CreateTime, UpdateTime, 
+    `Status`
+    from company
+    where CompanyID = #{companyID,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select CompanyID, CompanyName, Address, Tel, EMail, WebAddress, CreateTime, UpdateTime, 
+    `Status`
+    from company
+  </select>
+</mapper>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wxluo.mybatis.dao.MailtaskMapper">
+  <resultMap id="BaseResultMap" type="com.wxluo.mybatis.entity.Mailtask">
+    <id column="MailID" jdbcType="INTEGER" property="mailID" />
+    <result column="GroupID" jdbcType="INTEGER" property="groupID" />
+    <result column="UserID" jdbcType="INTEGER" property="userID" />
+    <result column="Keywords" jdbcType="VARCHAR" property="keywords" />
+    <result column="SearchArea" jdbcType="VARCHAR" property="searchArea" />
+    <result column="SearchDate" jdbcType="VARCHAR" property="searchDate" />
+    <result column="Timer" jdbcType="VARCHAR" property="timer" />
+    <result column="Type" jdbcType="TINYINT" property="type" />
+    <result column="SendMails" jdbcType="VARCHAR" property="sendMails" />
+    <result column="SendNums" jdbcType="INTEGER" property="sendNums" />
+    <result column="ArriveNums" jdbcType="INTEGER" property="arriveNums" />
+    <result column="DenyNums" jdbcType="INTEGER" property="denyNums" />
+    <result column="CreateTime" jdbcType="BIGINT" property="createTime" />
+    <result column="UpdateTime" jdbcType="BIGINT" property="updateTime" />
+    <result column="Status" jdbcType="TINYINT" property="status" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from mailtask
+    where MailID = #{mailID,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wxluo.mybatis.entity.Mailtask">
+    insert into mailtask (MailID, GroupID, UserID, 
+      Keywords, SearchArea, SearchDate, 
+      Timer, `Type`, SendMails, 
+      SendNums, ArriveNums, DenyNums, 
+      CreateTime, UpdateTime, `Status`
+      )
+    values (#{mailID,jdbcType=INTEGER}, #{groupID,jdbcType=INTEGER}, #{userID,jdbcType=INTEGER}, 
+      #{keywords,jdbcType=VARCHAR}, #{searchArea,jdbcType=VARCHAR}, #{searchDate,jdbcType=VARCHAR}, 
+      #{timer,jdbcType=VARCHAR}, #{type,jdbcType=TINYINT}, #{sendMails,jdbcType=VARCHAR}, 
+      #{sendNums,jdbcType=INTEGER}, #{arriveNums,jdbcType=INTEGER}, #{denyNums,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=BIGINT}, #{updateTime,jdbcType=BIGINT}, #{status,jdbcType=TINYINT}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.wxluo.mybatis.entity.Mailtask">
+    update mailtask
+    set GroupID = #{groupID,jdbcType=INTEGER},
+      UserID = #{userID,jdbcType=INTEGER},
+      Keywords = #{keywords,jdbcType=VARCHAR},
+      SearchArea = #{searchArea,jdbcType=VARCHAR},
+      SearchDate = #{searchDate,jdbcType=VARCHAR},
+      Timer = #{timer,jdbcType=VARCHAR},
+      `Type` = #{type,jdbcType=TINYINT},
+      SendMails = #{sendMails,jdbcType=VARCHAR},
+      SendNums = #{sendNums,jdbcType=INTEGER},
+      ArriveNums = #{arriveNums,jdbcType=INTEGER},
+      DenyNums = #{denyNums,jdbcType=INTEGER},
+      CreateTime = #{createTime,jdbcType=BIGINT},
+      UpdateTime = #{updateTime,jdbcType=BIGINT},
+      `Status` = #{status,jdbcType=TINYINT}
+    where MailID = #{mailID,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select MailID, GroupID, UserID, Keywords, SearchArea, SearchDate, Timer, `Type`, 
+    SendMails, SendNums, ArriveNums, DenyNums, CreateTime, UpdateTime, `Status`
+    from mailtask
+    where MailID = #{mailID,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select MailID, GroupID, UserID, Keywords, SearchArea, SearchDate, Timer, `Type`, 
+    SendMails, SendNums, ArriveNums, DenyNums, CreateTime, UpdateTime, `Status`
+    from mailtask
+  </select>
+  <resultMap id="BaseResultMap" type="com.wxluo.mybatis.entity.Mailtask">
+    <id column="MailID" jdbcType="INTEGER" property="mailID" />
+    <result column="GroupID" jdbcType="INTEGER" property="groupID" />
+    <result column="UserID" jdbcType="INTEGER" property="userID" />
+    <result column="Keywords" jdbcType="VARCHAR" property="keywords" />
+    <result column="SearchArea" jdbcType="VARCHAR" property="searchArea" />
+    <result column="SearchDate" jdbcType="VARCHAR" property="searchDate" />
+    <result column="Timer" jdbcType="VARCHAR" property="timer" />
+    <result column="Type" jdbcType="TINYINT" property="type" />
+    <result column="SendNums" jdbcType="INTEGER" property="sendNums" />
+    <result column="ArriveNums" jdbcType="INTEGER" property="arriveNums" />
+    <result column="DenyNums" jdbcType="INTEGER" property="denyNums" />
+    <result column="CreateTime" jdbcType="BIGINT" property="createTime" />
+    <result column="UpdateTime" jdbcType="BIGINT" property="updateTime" />
+    <result column="Status" jdbcType="TINYINT" property="status" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from mailtask
+    where MailID = #{mailID,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wxluo.mybatis.entity.Mailtask">
+    insert into mailtask (MailID, GroupID, UserID, 
+      Keywords, SearchArea, SearchDate, 
+      Timer, `Type`, SendNums, 
+      ArriveNums, DenyNums, CreateTime, 
+      UpdateTime, `Status`)
+    values (#{mailID,jdbcType=INTEGER}, #{groupID,jdbcType=INTEGER}, #{userID,jdbcType=INTEGER}, 
+      #{keywords,jdbcType=VARCHAR}, #{searchArea,jdbcType=VARCHAR}, #{searchDate,jdbcType=VARCHAR}, 
+      #{timer,jdbcType=VARCHAR}, #{type,jdbcType=TINYINT}, #{sendNums,jdbcType=INTEGER}, 
+      #{arriveNums,jdbcType=INTEGER}, #{denyNums,jdbcType=INTEGER}, #{createTime,jdbcType=BIGINT}, 
+      #{updateTime,jdbcType=BIGINT}, #{status,jdbcType=TINYINT})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.wxluo.mybatis.entity.Mailtask">
+    update mailtask
+    set GroupID = #{groupID,jdbcType=INTEGER},
+      UserID = #{userID,jdbcType=INTEGER},
+      Keywords = #{keywords,jdbcType=VARCHAR},
+      SearchArea = #{searchArea,jdbcType=VARCHAR},
+      SearchDate = #{searchDate,jdbcType=VARCHAR},
+      Timer = #{timer,jdbcType=VARCHAR},
+      `Type` = #{type,jdbcType=TINYINT},
+      SendNums = #{sendNums,jdbcType=INTEGER},
+      ArriveNums = #{arriveNums,jdbcType=INTEGER},
+      DenyNums = #{denyNums,jdbcType=INTEGER},
+      CreateTime = #{createTime,jdbcType=BIGINT},
+      UpdateTime = #{updateTime,jdbcType=BIGINT},
+      `Status` = #{status,jdbcType=TINYINT}
+    where MailID = #{mailID,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select MailID, GroupID, UserID, Keywords, SearchArea, SearchDate, Timer, `Type`, 
+    SendNums, ArriveNums, DenyNums, CreateTime, UpdateTime, `Status`
+    from mailtask
+    where MailID = #{mailID,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select MailID, GroupID, UserID, Keywords, SearchArea, SearchDate, Timer, `Type`, 
+    SendNums, ArriveNums, DenyNums, CreateTime, UpdateTime, `Status`
+    from mailtask
+  </select>
+</mapper>
