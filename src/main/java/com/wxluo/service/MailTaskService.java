@@ -3,6 +3,7 @@ package com.wxluo.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.parsing.FailFastProblemReporter;
 import org.springframework.stereotype.Service;
 
 import com.wxluo.mybatis.dao.MailtaskMapper;
@@ -30,7 +31,7 @@ public class MailTaskService {
 			
 			//入库操作
 			if(mailtaskMapper.insert(task) > 0) {
-				//根据发信箱配置  发信箱如果有多个，是同时发 还是挨个发，需要做成多线程发送吗？
+				//根据发信箱配置发送邮件 
 				for (String mail : mails) {
 					
 					
@@ -42,6 +43,7 @@ public class MailTaskService {
 			//获取邮箱组
 			
 		}
+		return false;
 
 	}
 	
